@@ -54,7 +54,7 @@ console.log(person.idade);
 console.log(person.nome);
 console.log(person.lastName);
 console.log(person.nome.length);
-*/
+
 // 6 - Adicionar ou retirar propriedades do objeto
 
 const carro = {
@@ -93,3 +93,88 @@ console.log(Object.keys(carro)) // Imprimi as chaves ou atributos
 
 console.log(Object.entries(carro)) // Imprimi valores e atributos
 
+// 9 - Mutação
+const a = {
+    name: "Alexandre"
+};
+ const b = a ; // declaramos que b receberá a ;
+ 
+ console.log(a);
+ console.log(b);
+
+ console.log(a === b);
+
+ a.age = 30 ; // acrescentamos o atributo age no objeto a
+
+ console.log(a) // os dois tem o atributo age agora
+ console.log(b)
+
+ delete b.age // Deletamos o atributo ;
+
+ console.log(a) // os dois não tem mais o atributo age
+ console.log(b)
+ 
+
+ // 10 -  Loops em array
+
+ const users = ["Mateus" , "Joao", "Pedro" , "Miguel"]
+
+ console.log(users)
+
+ for(let i = 0; i < users.length; i++ ) {
+    console.log(`Listando meu usuario: ${users[i]}`)
+ }
+
+ // 11 - Push e Pop
+
+ const array = ["a" , "b" , "c"];
+
+ console.log(array);
+
+ array.push("d");
+
+ console.log(array);
+
+ array.pop(); // Serve para remove item
+
+ console.log(array)
+
+ array.push("z" ,"y", "w") //  Podemos usar para adicionar mais elementos, basta separar por virgula;
+
+ console.log(array);
+
+// 12 - Métodos de array: Shift e Unshift
+
+// Shift = Remove o primeiro elemento do array
+// Unshift = Adiciona itens ao inicio do array
+
+const array2 = [1 , 2, 3];
+
+ console.log(array2);
+
+ array2.unshift(0); // adiciona elementos no começo do array
+
+ console.log(array2);
+
+ array2.shift(); // Serve para remove item no indice 0 (inicio)
+
+ console.log(array2)
+
+ array2.unshift(0.7 ,0.8, 0.9) //  Podemos usar para adicionar mais elementos, basta separar por virgula;
+
+ console.log(array2);
+
+*/
+
+ // 28 - Json para objetos e objeto para JSON
+
+ 
+ // Na maioria das vezes vamos precisar converter objetos para JSON;
+ // stringify = Transforma objeto em Json 
+ // parse = Transforma um Json e Objeto
+ const myJson = '{"name" : "Alexandre" , "age": 30 , "skills" : "["JavaScript" , "Python"]" }'
+console.log(myJson);
+
+const myObj = JSON.parse(myJson);// Transformando o JSON myJson em objeto
+
+console.log(myObj)
