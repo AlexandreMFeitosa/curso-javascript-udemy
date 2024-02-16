@@ -114,7 +114,6 @@ const a = {
  console.log(a) // os dois não tem mais o atributo age
  console.log(b)
  
- */
 
  // 10 -  Loops em array
 
@@ -164,3 +163,18 @@ const array2 = [1 , 2, 3];
  array2.unshift(0.7 ,0.8, 0.9) //  Podemos usar para adicionar mais elementos, basta separar por virgula;
 
  console.log(array2);
+
+*/
+
+ // 28 - Json para objetos e objeto para JSON
+
+ 
+ // Na maioria das vezes vamos precisar converter objetos para JSON;
+ // stringify = Transforma objeto em Json 
+ // parse = Transforma um Json e Objeto
+ const myJson = '{"name" : "Alexandre" , "age": 30 , "skills" : "["JavaScript" , "Python"]" }'
+console.log(myJson);
+
+const myObj = JSON.parse(myJson);// Transformando o JSON myJson em objeto
+
+console.log(myObj)
