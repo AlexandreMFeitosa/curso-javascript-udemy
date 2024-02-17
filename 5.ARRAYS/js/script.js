@@ -96,7 +96,7 @@ console.log(Object.entries(carro)) // Imprimi valores e atributos
 // 11 - Push e Pop
 // add e remove no fim elemento de um array
 
-<<<<<<< HEAD
+// HEAD
 const letras = ["a" , "b" , "c"]
 
 console.log(letras);
@@ -347,15 +347,13 @@ console.log(veiculoB);
 //utilizamos para comunicacao entre API e Front-End
 //Regra: Sempre aspas duplas e não aceita comentarios;
 
-const myJson = '{"name" : "Alexandre" , "age": 30 , "skills" : ["PHP","Python"] }'
+const myJso = '{"name" : "Alexandre" , "age": 30 , "skills" : ["PHP","Python"] }'
 
-console.log(myJson);
-console.log(typeof myJson);
+console.log(myJso);
+console.log(typeof myJso);
 
 // Conversão de Json
-// JSON para Objeto e Objeto para JSON
-// Utilizamos o objeto JSON e os metodos são stringify  e parse
-=======
+// JSON para Objeto e Objeto para JSON// Utilizamos o objeto JSON e os metodos são stringify  e parse
 // 9 - Mutação
 const a = {
     name: "Alexandre"
@@ -427,18 +425,18 @@ const array2 = [1 , 2, 3];
 
  console.log(array2);
 
-*/
 
  // 28 - Json para objetos e objeto para JSON
 
- 
  // Na maioria das vezes vamos precisar converter objetos para JSON;
  // stringify = Transforma objeto em Json 
  // parse = Transforma um Json e Objeto
- const myJson = '{"name" : "Alexandre" , "age": 30 , "skills" : "["JavaScript" , "Python"]" }'
+ const myJson = '{"name" : "Alexandre" , "age": 30 , "skills" : ["JavaScript" , "Python"] }'
+
 console.log(myJson);
 
-const myObj = JSON.parse(myJson);// Transformando o JSON myJson em objeto
+const myObjt = JSON.parse(myJson);
+// Transformando o JSON myJson em objeto
 
-console.log(myObj)
->>>>>>> 40899d39e9a2c3f2e9950d3c61d57a960773d63d
+console.log(myObjt)
+
