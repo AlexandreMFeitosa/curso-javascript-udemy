@@ -92,5 +92,3 @@ console.log(Object.getPrototypeOf(bool));  // Descobrir os ancestrias da variave
 const arra = [];
 console.log(Object.getPrototypeOf(arra));  // Descobrir os ancestrias da variavel arr
 
-
-
