@@ -92,3 +92,109 @@ console.log(Object.getPrototypeOf(bool));  // Descobrir os ancestrias da variave
 const arra = [];
 console.log(Object.getPrototypeOf(arra));  // Descobrir os ancestrias da variavel arr
 
+// 4 - Mains sobre prototype ;
+
+const myObject = {
+    a:"b"
+}
+
+console.log(Object.getPrototypeOf(myObject)); // Pegar o prototype do objeto;
+
+console.log(Object.getPrototypeOf(myObject) === Object.prototype);
+
+const myObject2 = Object.create(myObject); // Criei um object, através de outro ;
+
+console.log(myObject2.a); // Vai imprimir o mesmo que o myObject
+
+console.log(Object.getPrototypeOf(myObject2) === myObject); // Eles são iguais
+
+// 5 - Classes básicas
+// Os prototypes são orginados de uma classe;
+
+const cachorro = {
+    raca: null , 
+    patas: 4
+}
+
+const pastorAlemao = Object.create(cachorro);
+const viraLata = Object.create(cachorro);
+const huskSiberiano = Object.create(cachorro);
+
+pastorAlemao.raca = "Thor"
+console.log(pastorAlemao.patas);
+
+viraLata.raca = "Flora";
+huskSiberiano.raca = "Gohan";
+
+console.log(viraLata);
+
+// 6 - Funcoes construtoras; 
+
+// Utilizando funcoes como classes, conseguimos iniciar as propriedades com a criação do objeto;
+// Chamamos de funcao contrutora, este recurso ;
+// O constructor tem como objetivo instanciar um objeto, ou seja, criar um novo objeto;
+
+// Quando a funcao vira uma classe;
+
+function criarCachorro(nome, raca) {
+    
+    const cachorro2 = Object.create({}) // variavel que criar um objeto vazio;
+
+    cachorro2.nome = nome;
+    cachorro2.raca = raca;
+    
+
+    return cachorro2;
+
+}
+
+const bob = criarCachorro("bob" , "Vira-lata");
+
+console.log(bob);
+
+const jack = criarCachorro("Amora" , "raposa");
+console.log(jack) ;
+
+// 7 - Funcoes com classe ( funcao construtora )
+
+function Cachorro (raca , nome) {
+    this.nome = nome
+    this.raca = raca
+}
+
+const husky = new Cachorro("bobito" , "Husky");
+
+console.log(husky);
+
+
+// 8 -Metodos na funcao contrutora
+
+Cachorro.prototype.uivar = function() { // adicionar metodo a este tipo de classe
+    console.log("Auuuu !!!")
+}
+
+husky.uivar();
+
+// 9 - classes es6
+
+class CachorroClasse {
+    constructor (nome , raca) {
+        this.nome = nome
+        this.raca = raca
+    }
+}
+
+const jeff = new CachorroClasse("Jeff" , "Vira-Lata");
+
+console.log(jeff);
+
+class carro {
+    constructor (modelo , ano) {
+        this.modelo = modelo
+        this.ano = ano
+    }
+}
+
+const hb20 = new carro("HB20" , 2015);
+
+console.log(hb20);
