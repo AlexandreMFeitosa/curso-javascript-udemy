@@ -198,3 +198,129 @@ class carro {
 const hb20 = new carro("HB20" , 2015);
 
 console.log(hb20);
+
+// 10 - 
+
+class Caminhao {
+    constructor (eixos , cor) {
+        this.eixos = eixos
+        this.cor = cor
+    }
+    caminhaoDescrition () {
+        console.log(`Este caminhão tem ${this.eixos} eixos e é da cor ${this.cor}`)
+    }
+}
+
+const truckAmarela = new Caminhao(8 , "Amarela");
+
+console.log(truckAmarela);
+
+truckAmarela.caminhaoDescrition();
+
+// Se tentamos atribuir um novo atributo, sem prototype, não vai ser aceito
+
+Caminhao.motor = 4.0
+
+console.log(Caminhao);
+
+// Já se ursarmos o prototype, irá funcionar
+
+Caminhao.prototype.motor = 5.5;
+
+const c3 = new Caminhao( 5 , "red")
+
+console.log(c3.motor);
+
+// 11 - override
+class Humano {
+    constructor (nome , idade) {
+        this.nome = nome
+        this.idade = idade
+    }
+
+}
+
+const Alexandre = new Humano("Alexandre"  , 30);
+
+console.log(Alexandre);
+
+Humano.prototype.idade = "Nao definida" ;
+
+console.log(Alexandre.idade);
+
+// 12 - Symbols
+// Quando usamos class com Symbol, ele não mudará jamais, como se fosse um const
+
+class Aviao {
+    constructor(marca , turbinas) {
+        this.marca = marca
+        this.turbinas = turbinas
+    }
+}
+
+const asas = Symbol();
+
+Aviao.prototype[asas] = 2
+
+const boing = new Aviao("Emirates" , 10);
+
+console.log(boing)
+console.log(boing[asas]);
+
+//13 - Getters e Setters
+
+// Os Get é um metodo utilizado para exibir o valor de alguma propriedade;
+// E o set é utilizado par alterar o valor
+// Através metodos , temos um bloco de código para transformarção de dados;
+
+class Post {
+    constructor (titulo , descricao, tags) {
+        this.titulo = titulo
+        this.descricao = descricao
+        this.tags = tags
+    }
+    
+    get exibirTitulo() {
+        return `Você está lendo: ${this.titulo}`
+    }
+
+    set adicionarTags(tags) {
+        const tagArrays = tags.split(" , ")
+        this.tags = tagArrays
+    }
+}
+
+const newPost = new Post("Javascript" , "POsto sobre programacao !");
+
+console.log(newPost.exibirTitulo);
+
+newPost.adicionarTags = "Java , JAvascript, Tag"
+
+console.log(newPost);
+
+// 14 - Herança
+
+class Mamifero {
+    constructor(patas) {
+        this.patas = patas
+    }
+}
+
+class Lobo extends Mamifero {
+    constructor(patas, nome) {
+        super(patas,patas);
+        this.nome = nome
+    }
+}
+
+const shark = new Lobo(4, "Shark");
+
+console.log(shark);
+
+console.log(shark.patas);
+
+// 15 - instanceof
+
+console.log(shark instanceof Lobo);
+
+console.log(Lobo instanceof Mamifero);
