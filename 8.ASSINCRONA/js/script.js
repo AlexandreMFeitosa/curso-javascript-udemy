@@ -111,4 +111,51 @@ somarComDelay(2,2).then((value) => {
     console.log(`A soma é ${value}`)
 });
 
-console.log("Teste ASYNC")
+console.log("Teste ASYNC");
+
+//Exemplo 2 =
+
+async function multiplicarNumber(c,d) {
+    return c * d
+}
+
+multiplicarNumber(2,2).then((value) => {
+    console.log(`A multiplicação é ${value}`)
+})
+
+//Exemplo com string;
+
+async function nameLastName(nome , sobrenome) {
+    return ` ${nome} ${sobrenome} `
+};
+
+nameLastName("Alexandre" , "Moraes").then((value) => {
+    console.log(`Meu nome completo é ${value}`)
+});
+
+// 8 - Async Await
+// Instrução await serve para aguardar o resultado de uma async function
+
+function resolveComDelay(){
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve("resolveu a promise !")
+        }, 3000);
+    })
+}
+
+async function chamadaAsync(){
+    console.log("Chamando a promise, e esperando o resultado !")
+
+    const result = await resolveComDelay();
+
+    console.log(`O resultado chegou : ${result}`);
+
+};
+
+chamadaAsync();
+
+// 9 - Generators
+// Funcionam parecido com promise.
+// Açoes podem ser pausadas e continuadas depois
+// Temos novos operadores, como FUNCTION* e YIELD
