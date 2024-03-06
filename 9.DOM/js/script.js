@@ -55,4 +55,3 @@ console.log(header);
 header.insertBefore(main, title); // Agora dentro do header, antes do elemento title, teremos um paragrafo.
 
 // criamos uma tag no html.
-
