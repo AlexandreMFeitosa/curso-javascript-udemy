@@ -55,3 +55,60 @@ console.log(header);
 header.insertBefore(main, title); // Agora dentro do header, antes do elemento title, teremos um paragrafo.
 
 // criamos uma tag no html.
+
+// 7 - AppendChild
+const navLinks = document.querySelector("nav ul");
+
+const li = document.createElement("li");
+
+navLinks.appendChild(li);
+
+// 8 - replaceChild
+
+const h2 = document.createElement("h2");
+
+h2.textContent = "Meu novo titulo "
+
+header.replaceChild(h2 , title);
+
+
+// 9 - createTextNode
+
+const myText = document.createTextNode("Agora vamos colocar mias um título");
+
+console.log(myText);
+
+const h3 = document.createElement("h3");
+
+h3.appendChild(myText);
+
+console.log(h3);
+
+mainContainer.appendChild(h3);
+
+// 10 - Trabalhando com atributos
+
+const firstLink = navLinks.querySelector("a");
+
+console.log(firstLink);
+
+firstLink.setAttribute("href" , "https://www.google.com");
+
+firstLink.setAttribute("target", "_blank");
+
+// 11 - Altura e largura
+
+const footer = document.querySelector("footer");
+
+console.log(footer.offsetHeight); // mostrar a Altura do elemento
+console.log(footer.offsetWidth); // mostrar a Largura do elemento
+
+// 12 - Posições do elemento
+
+console.log(footer.getBoundingClientRect());
+
+// Outro exemplo:
+const body1 = document.querySelector("body");
+
+console.log(body1.getBoundingClientRect());
+
