@@ -6,3 +6,10 @@ body {
     padding: 30px;
     background-color: green;
 }
+
+#testeMouse {
+    border: 2px solid black;
+    padding: 10px;
+    width: 150px;
+    background-color: rgb(245, 228, 228);
+}
