@@ -47,3 +47,65 @@ containerBtn.addEventListener("click" , () => {
 btnInsiderContainer.addEventListener("click" , (e) => {
     e.stopPropagation();
     console.log("Evento 2")} );
+
+// 5 - Açoes default
+
+const a = document.querySelector("a");
+
+a.addEventListener("click" , (e) => {
+    e.preventDefault(e)
+
+    console.log("Não alterou a página !");
+});
+
+// 6 - Eventos de tecla
+
+document.addEventListener("keyup" , (e) => {
+    console.log(`Apertou a tecla ${e.key}`); // se apertar e soltar o teclado;
+})
+
+document.addEventListener("keydown" , (e) => {
+    console.log(`Pressionou a tecla ${e.key}`); // Pressionar o teclado e nao soltar, não para de digitar
+})
+
+// 7 - Eventos de mouse
+
+const mousePad = document.querySelector("#testeMouse");
+
+mousePad.addEventListener("mousedown" , (e) => {
+    console.log("Pressionou o mouse !");
+})
+
+mousePad.addEventListener("mouseup" , (e) => {
+    console.log("Soltou o mouse !");
+})
+
+mousePad.addEventListener("dbclick" , (e) => {
+    console.log("Clicou o mouse 2x !");
+})
+
+// 8 - Movimento do mouse
+
+document.addEventListener("mousemove" , (e) => {
+    console.log("Passou o mouse em cima!");
+})
+
+// 9 - Evento de scroll
+
+window.addEventListener("scroll" , (e) => {
+    if(window.scrollY > 200) {
+        console.log("Passou de 200")
+    }
+})
+
+// 10 - Evento Focus
+
+const myInput = document.querySelector("#my-input");
+
+myInput.addEventListener("focus" , (e) => {
+    console.log("Entrou no input !");
+})
+
+myInput.addEventListener("blur" , (e) => {
+    console.log("Saiu do input !");
+})
